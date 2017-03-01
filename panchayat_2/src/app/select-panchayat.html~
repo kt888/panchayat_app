@@ -1,0 +1,15 @@
+<h1>
+  {{title}}
+</h1>
+
+<p>Select Panchayat</p>
+
+<ul>
+  <li *ngFor="let item of items | async">
+<a [routerLink]="['/panchayat', item.panchayatName]">
+  {{item.$key}}
+  {{item.panchayatName}}  </a>: {{item.dateTo}}
+
+  </li>
+</ul>
+<router-outlet></router-outlet>

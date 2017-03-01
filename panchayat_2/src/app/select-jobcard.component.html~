@@ -1,0 +1,9 @@
+<h2>{{title}}</h2>
+<ul>
+  <li *ngFor="let item of items | async">
+<a [routerLink]="['/jobcard/', item.$key]">
+{{item.$key}} {{item.$value}}  </a> {{item.$key.$key}}
+
+  </li>
+  </ul>
+<router-outlet></router-outlet>

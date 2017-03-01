@@ -1,0 +1,14 @@
+import { Injectable } from '@angular/core';
+import { Item, Items$ } from './items.model';
+import { AngularFire } from 'angularfire2';
+
+@Injectable()
+export class ItemsService {
+    items$: Items$;
+
+    constructor(private af: AngularFire) { }
+
+    getItems(): Items$ {
+        this.items$ = this.af.database.list('items');
+        return this.items$;
+    }

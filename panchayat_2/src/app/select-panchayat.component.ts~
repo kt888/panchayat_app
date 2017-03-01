@@ -1,0 +1,22 @@
+import { Component } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2'
+import { ActivatedRoute } from '@angular/router'
+import { Location } from '@angular/common';
+
+
+@Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+    title = 'New App still works!';
+    items: FirebaseListObservable<any[]>;
+    temp = "";
+    qname = "CH-05-007-010-002/288";
+
+    constructor(private af: AngularFire, private location: Location) {
+        this.items = af.database.list(this.temp, { query: { limitToFirst: 10 } });
+    }
+}
