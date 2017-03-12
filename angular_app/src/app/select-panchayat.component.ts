@@ -15,6 +15,6 @@ export class SelectPanchayatComponent {
     items: FirebaseListObservable<any[]>;
 
     constructor(private af: AngularFire, private location: Location) {
-        this.items = af.database.list('/data');
+        this.items = af.database.list('/panchayats');
     }
 }
