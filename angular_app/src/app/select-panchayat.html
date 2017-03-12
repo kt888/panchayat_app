@@ -4,11 +4,20 @@
 
 <p>Select Panchayat</p>
 
-<ul>
-  <li *ngFor="let item of items | async">
-<a [routerLink]="['/panchayat', item.$key]">
-  {{item.$key}}</a>
-
-  </li>
-</ul>
+<table>
+  <tr>
+    <th>Panchayat Name</th>
+    <th>Number of transactions</th>
+    <th>Number of jobcards</th>
+    <th>Earliest date</th>
+    <th>Latest date</th>
+  </tr>
+  <tr *ngFor="let item of items | async">
+    <td><a [routerLink]="['/panchayat', item.$key]">{{item.$key}}</a></td>
+    <td>{{item['transactions']}}</td>
+    <td>{{item['num_jobcards']}}</td>
+    <td>{{item['earliest_date']}}</td>
+    <td>{{item['latest_date']}}</td>
+  </tr>
+</table>
 <router-outlet></router-outlet>
