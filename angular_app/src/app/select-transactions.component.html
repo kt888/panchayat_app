@@ -1,28 +1,27 @@
 <h2>{{title}}</h2>
 
-<p id="selected">Select transaction and go below the table to see details</p>
-<br/> <br />
-
 <table>
   <tr>
-    <th>Job card ID</th>
-    <th>Number of Transactions</th>
-    <th>Earliest Date</th>
-    <th>Last Date</th>    
+    <th>ID</th>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Work Name</th>    
+    <th>Last Known Status</th>    
   </tr>
   <tbody>
-    <tr *ngFor = "let item of items | async"
-	(click)="onSelect(item)"
-	[class.selectedRow] = "item === selectedItem">
-      <td>{{jobcard_name}}/{{item.$key}}</td>
-      <td>{{item['num_transactions']}}</td>
-      <td></td>
-      <td></td>
+    <tr *ngFor = "let item of items | async">
+	<!--(click)="onSelect(item)"
+	[class.selectedRow] = "item === selectedItem"-->
+      <td><a [routerLink]="['/transaction/', item.$key]">{{item.$key}}</a></td>
+      <td>{{item['name']}}</td>
+      <td>{{item['dateTo']}}</td>
+      <td>{{item['workName']}}</td>
+      <td>{{item['lastKnownStatus']}}</td>
     </tr>
   </tbody>
 </table>
 
-<div id="selected" *ngIf = "selectedItem">
+<!--<div id="selected" *ngIf = "selectedItem">
   <h2>Details about the selected transaction</h2>
 
 <p><b>Jobcard Number</b>:    {{selectedItem[1]['jobcard']}}</p>
@@ -44,4 +43,4 @@
 <p><b>FTO Status</b>:    {{selectedItem[1]['ftoStatus']}}</p>
 <p><b>Reason for rejection (if rejected)</b>:    {{selectedItem[1]['rejectionReason']}}</p>
   
-</div>
+</div>-->
