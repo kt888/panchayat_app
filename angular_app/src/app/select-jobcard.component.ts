@@ -21,9 +21,10 @@ export class SelectJobcardComponent {
     constructor(private router: Router, private af: AngularFire) {
         var urlValue = this.router.url;
         var u = urlValue.replace(this.removeFromUrl, '');
-		var base = '/data'
-		u = base.concat(u)
-		console.log(u);
+	var base = '/jobcards'
+	u = base.concat(u)
+	console.log(u)
+	
         this.items = af.database.list(u);
         var baseForJc = urlValue + '/jobcard';
         console.log(baseForJc)

@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SelectJobcardComponent } from './select-jobcard.component'
 import { SelectPanchayatComponent } from './select-panchayat.component'
 import { SelectTransactionsComponent } from './select-transactions.component'
+import { SelectTransactionComponent } from './select-transaction.component'
 
 import { RouterComponent } from './app.router'
 
@@ -19,7 +20,8 @@ import { RouterComponent } from './app.router'
         AppComponent,
         SelectJobcardComponent,
         SelectPanchayatComponent,
-        SelectTransactionsComponent
+	SelectTransactionsComponent,
+	SelectTransactionComponent
 
     ],
     imports: [

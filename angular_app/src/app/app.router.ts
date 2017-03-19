@@ -6,11 +6,14 @@ import { SelectPanchayatComponent } from './select-panchayat.component';
 
 import { SelectTransactionsComponent } from './select-transactions.component';
 
+import { SelectTransactionComponent } from './select-transaction.component';
+
 const routes: Routes = [
     { path: '', redirectTo: 'select-panchayat', pathMatch: 'full' },
     { path: 'select-panchayat', component: SelectPanchayatComponent },
     { path: 'panchayat/:panchayatName', component: SelectJobcardComponent },
-    { path: 'panchayat/:panchayatName/jobcard/:jobcard', component: SelectTransactionsComponent }
+    { path: 'jobcard/:jobcard', component: SelectTransactionsComponent },
+    { path: 'transaction/:transaction', component: SelectTransactionComponent }
 ]
 
 @NgModule({
